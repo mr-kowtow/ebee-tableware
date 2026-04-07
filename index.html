@@ -801,15 +801,16 @@
       <a href="#" title="LinkedIn">in LinkedIn</a>
     </div>
     <div>
-      <select class="lang-select">
-        <option>English</option>
-        <option>Chinese</option>
-        <option>Spanish</option>
-        <option>French</option>
-        <option>German</option>
-        <option>Japanese</option>
+      <select class="lang-select" id="lang-switcher">
+        <option value="en">English</option>
+        <option value="zh-CN">Chinese</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="ja">Japanese</option>
       </select>
     </div>
+    <div id="google_translate_element" style="display:none"></div>
   </div>
 </div>
 
@@ -1293,6 +1294,38 @@
       header.style.boxShadow = '0 2px 8px rgba(0,0,0,.06)';
     }
   });
+
+  // Google Translate integration
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
+  }
+  document.getElementById('lang-switcher').addEventListener('change', function() {
+    const lang = this.value;
+    if (lang === 'en') {
+      // Reset to English
+      const frame = document.querySelector('.goog-te-banner-frame');
+      if (frame) {
+        const btn = frame.contentDocument && frame.contentDocument.querySelector('.goog-te-button button');
+        if (btn) btn.click();
+      }
+      const cookie = '/auto/en';
+      document.cookie = 'googtrans=' + cookie + '; path=/';
+      document.cookie = 'googtrans=' + cookie + '; domain=.' + location.hostname + '; path=/';
+      location.reload();
+      return;
+    }
+    const select = document.querySelector('.goog-te-combo');
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event('change'));
+    }
+  });
 </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style>
+  .goog-te-banner-frame, .goog-logo-link, .goog-te-gadget span { display: none !important; }
+  body { top: 0 !important; }
+  .skiptranslate { display: none !important; }
+</style>
 </body>
 </html>
