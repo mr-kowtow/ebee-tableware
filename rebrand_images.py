@@ -92,9 +92,7 @@ def process_image(filepath, logo):
     paste_x = w - lw2 - margin
     paste_y = margin
 
-    # Create a white semi-transparent backing so logo is readable on any bg
-    backing = Image.new('RGBA', (lw2 + 16, lh2 + 10), (255, 255, 255, 200))
-    img.alpha_composite(backing, (paste_x - 8, paste_y - 5))
+    # Composite logo directly — no backing box
     img.alpha_composite(logo_resized, (paste_x, paste_y))
 
     # Save
