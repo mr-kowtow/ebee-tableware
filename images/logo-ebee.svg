@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a8a6e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3aaa8a;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circle background for bee icon -->
+  <circle cx="30" cy="30" r="26" fill="url(#bgGrad)"/>
+
+  <!-- Bee body (abdomen) — teardrop shape -->
+  <ellipse cx="30" cy="33" rx="7" ry="10" fill="#fff" opacity="0.95"/>
+
+  <!-- Stripes on body -->
+  <rect x="23" y="29" width="14" height="3" rx="1.5" fill="#f5c842" opacity="0.85"/>
+  <rect x="23" y="34" width="14" height="3" rx="1.5" fill="#f5c842" opacity="0.85"/>
+
+  <!-- Bee head -->
+  <circle cx="30" cy="22" r="5.5" fill="#fff" opacity="0.95"/>
+
+  <!-- Antennae -->
+  <line x1="27.5" y1="17.5" x2="24" y2="13" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="23.5" cy="12.5" r="1.2" fill="#fff"/>
+  <line x1="32.5" y1="17.5" x2="36" y2="13" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+  <circle cx="36.5" cy="12.5" r="1.2" fill="#fff"/>
+
+  <!-- Wings (left) -->
+  <ellipse cx="19" cy="25" rx="7" ry="4" fill="#fff" opacity="0.55" transform="rotate(-20 19 25)"/>
+  <ellipse cx="18" cy="30" rx="5.5" ry="3" fill="#fff" opacity="0.35" transform="rotate(-15 18 30)"/>
+
+  <!-- Wings (right) -->
+  <ellipse cx="41" cy="25" rx="7" ry="4" fill="#fff" opacity="0.55" transform="rotate(20 41 25)"/>
+  <ellipse cx="42" cy="30" rx="5.5" ry="3" fill="#fff" opacity="0.35" transform="rotate(15 42 30)"/>
+
+  <!-- E-BEE wordmark -->
+  <text x="64" y="26" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="800" fill="#1a5c45" letter-spacing="-0.5">E-BEE</text>
+
+  <!-- Biomaterial sub-text -->
+  <text x="64" y="41" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="10" font-weight="500" fill="#3aaa8a" letter-spacing="2.5">BIOMATERIAL</text>
+
+  <!-- Leaf accent under wordmark -->
+  <path d="M64 45 Q110 45 155 45" stroke="#3aaa8a" stroke-width="0.8" opacity="0.4" fill="none"/>
+</svg>
