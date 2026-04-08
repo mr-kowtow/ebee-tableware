@@ -300,6 +300,7 @@
 </footer>
 
 <script src="products-data.js"></script>
+<script src="product-slugs.js"></script>
 <script>
   const CATEGORIES = [
     { key: 'Cutlery',    label: 'Cutlery',              icon: '🥄', anchor: 'cutlery' },
@@ -317,7 +318,7 @@
   function productCard(p) {
     const short = p.description.length > 90 ? p.description.slice(0, 90) + '…' : p.description;
     return `
-      <div class="product-card" onclick="location.href='product.html?id=${p.id}'">
+      <div class="product-card" onclick="location.href='products/' + (PRODUCT_SLUGS[p.id] || p.id) + '/'" role="link" tabindex="0">
         <div class="product-img">
           <img src="${p.image}" alt="${p.name}" loading="lazy" />
           <div class="view-overlay"><span>View Details</span></div>
