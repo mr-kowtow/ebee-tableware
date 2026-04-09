@@ -5,7 +5,7 @@ Each page has baked-in metadata so Googlebot sees content without JS.
 """
 import json, os, re, subprocess, textwrap
 
-BASE_URL = 'https://www.ebeebioproducts.com'
+BASE_URL = 'https://www.ebeetableware.com'
 
 # ── Slug map: id → SEO-friendly URL slug ─────────────────────────────────────
 SLUG_MAP = {
